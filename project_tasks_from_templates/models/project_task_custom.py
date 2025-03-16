@@ -40,7 +40,7 @@ class ProjectTaskCustom(models.Model):
                               help='Enter a description for the task.')
     user_ids = fields.Many2many(
         'res.users', relation='project_task_custom_user_rel', column1='task_id',
-        column2='user_id', string='Assignees', tracking=True,
+        column2='user_id', string='Assignees',
         help='Select the users who are assigned to this task.')
     parent_id = fields.Many2one(
         'project.task.custom', string='Parent Task', index=True,

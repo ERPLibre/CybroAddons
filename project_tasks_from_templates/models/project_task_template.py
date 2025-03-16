@@ -43,6 +43,7 @@ class ProjectStage(models.Model):
     """A model to define task templates for projects."""
     _name = 'project.stage'
     _order = "sequence,id"
+    _description = "Project stage to define task templates for projects."
 
     project_template_id = fields.Many2one(
         'project.task.template', string='Project Template',
