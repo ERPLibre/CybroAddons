@@ -23,7 +23,7 @@
     'category': 'Sales',
     'summary': """Picking Order Lines Views is helpful for the Detailed view of the picking
      order lines including the product images""",
-    'description': """Picking Order Line Detailed Views Shows us the Transfer Order with 
+    'description': """Picking Order Line Detailed Views Shows us the Transfer Order with
     images of their related products in the tree view of stock move lines""",
     'author': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
@@ -35,7 +35,7 @@
         'views/stock_picking_views.xml'
     ],
     'images': ['static/description/banner.jpg'],
-    'licence': 'LGPL-3',
+    'license': 'LGPL-3',
     'installable': True,
     'auto_install': False,
     'application': False,
