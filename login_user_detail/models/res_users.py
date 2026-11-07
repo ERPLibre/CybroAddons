@@ -39,7 +39,12 @@ class ResUsers(models.Model):
         """ Check user credentials during login and log the login details."""
         result = super(ResUsers, self)._check_credentials(
             password, user_agent_env)
-        ip_address = request.httprequest.environ['REMOTE_ADDR']
+        # XML-RPC and JSON-RPC calls check the credentials outside of any
+        # bound HTTP request: there is no IP to log, and reading it raises
+        # « object is not bound », which fails the whole call.
+        if not request:
+            return result
+        ip_address = request.httprequest.environ.get('REMOTE_ADDR')
         vals = {
             'name': self.name,
             'ip_address': ip_address
